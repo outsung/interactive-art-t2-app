@@ -24,18 +24,33 @@ export default function Home() {
         style={{
           color: Color.mainColor,
         }}
-      >{`아래 버튼을 클릭 하시면 풍등이 날라갑니다.`}</Title>
-      <TextButton
-        title={'Start !'}
-        style={{
-          marginTop: 20,
-          height: 60,
-          justifyContent: 'center',
-          alignContent: 'center',
-        }}
-        titleStyle={{ fontWeight: 'bold', fontSize: 30 }}
-        onPress={() => Socket.instance?.emit('animationStart')}
-      />
+      >{`풍등 조작 버튼`}</Title>
+      <View style={{ flexDirection: 'row' }}>
+        <TextButton
+          title={'풍등 띄우기'}
+          style={{
+            marginTop: 20,
+            marginRight: 5,
+            height: 60,
+            justifyContent: 'center',
+            alignContent: 'center',
+          }}
+          titleStyle={{ fontWeight: 'bold', fontSize: 30 }}
+          onPress={() => Socket.instance?.emit('animationStart')}
+        />
+        <TextButton
+          title={'밝기 올리기'}
+          style={{
+            marginTop: 20,
+            marginLeft: 5,
+            height: 60,
+            justifyContent: 'center',
+            alignContent: 'center',
+          }}
+          titleStyle={{ fontWeight: 'bold', fontSize: 30 }}
+          onPress={() => Socket.instance?.emit('upIntensity')}
+        />
+      </View>
 
       <Text
         style={{
