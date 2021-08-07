@@ -21,8 +21,8 @@ export default function Router() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main" headerMode="none">
-        {Object.entries(screens).map(([key, { component, options }], i) => (
-          <Stack.Screen key={i} name={key} component={component} options={options} />
+        {Object.entries(screens).map(([key, { component, options }]) => (
+          <Stack.Screen key={key} name={key} component={component} options={options} />
         ))}
       </Stack.Navigator>
     </NavigationContainer>
